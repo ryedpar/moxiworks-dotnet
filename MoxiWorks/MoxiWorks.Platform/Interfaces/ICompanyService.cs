@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 namespace MoxiWorks.Platform.Interfaces
 {
     /// <summary>
@@ -8,5 +9,8 @@ namespace MoxiWorks.Platform.Interfaces
     {
         IMoxiWorksClient Client { get; set; }
         Task<Response<Company>> GetCompanyAsync(string moxiWorksCompanyId);
+        Response<Company> GetCompany(string moxiWorksCompanyId);
+        Task<Response<List<Company>>> GetCompaniesAsync();
+        Response<List<Company>> GetCompanies();
     }
 }
